@@ -1,752 +1,136 @@
-html {
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-footer {
-  display: block;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-a {
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-b {
-  font-weight: inherit;
-}
-
-b {
-  font-weight: bolder;
-}
-
-img {
-  border-style: none;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-select {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-
-select {
-  text-transform: none;
-}
-
-html [type="button"],[type="reset"],[type="submit"] {
-  -webkit-appearance: button;
-}
-
-[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-[type="checkbox"],[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-
-[type="search"]::-webkit-search-cancel-button,[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-
-summary {
-  display: list-item;
-}
-
-template {
-  display: none;
-}
-
-[hidden] {
-  display: none;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 * {
   box-sizing: border-box;
 }
 
-.bftn-homepage {
-  background-color: #171629;
-  color: #CCCAEA;
-  background-image: url("/images/v2-bg-noise.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
-.bftn-homepage h1,.bftn-homepage h2,.bftn-homepage h3 {
-  font-family: Montserrat,sans-serif;
-  font-weight: bold;
-  color: #fd4935;
-}
-
-.bftn-homepage h1 a,.bftn-homepage h2 a,.bftn-homepage h3 a {
-  color: inherit;
-}
-
-.bftn-homepage h4 {
-  font-family: Montserrat,sans-serif;
-  font-weight: bold;
-  color: #279cff;
-}
-
-.bftn-homepage div,.bftn-homepage p {
-  font-family: "Open Sans",sans-serif;
-}
-
-.bftn-homepage h1 {
-  text-align: center;
-  font-size: 55px;
-  margin: 20px 0;
-  letter-spacing: 1px;
-  white-space: pre;
-}
-
-.bftn-homepage h1 span {
-  display: block;
-}
-
-.bftn-homepage h2 {
-  font-size: 36px;
-  margin-top: 2em;
-  margin-left: -2px;
-}
-
-.bftn-homepage .unit {
-  width: 800px;
-  margin: 0px auto;
-  position: relative;
-}
-
-.bftn-homepage .unit p {
-  width: 800px;
-  line-height: 1.5em;
-}
-
-.bftn-homepage .unit p em {
-  font-weight: bold;
-  font-style: normal;
-  color: #FFF;
-}
-
-.bftn-homepage .unit p a:not(.btn) {
-  text-decoration: underline;
-  color: #6388ed;
-}
-
-.bftn-homepage footer {
-  background-color: #1f1c35;
-  padding: 30px 30px 0px 30px;
-  margin-top: 100px;
-}
-
-.bftn-homepage footer .logos {
-  padding: 20px 0;
-  border-bottom: 2px solid #393558;
-  text-align: center;
-}
-
-.bftn-homepage footer .logos a {
-  line-height: 62px;
-}
-
-.bftn-homepage footer .logos .fftf {
-  margin-right: 40px;
-  position: relative;
-  top: -6px;
-}
-
-.bftn-homepage footer .logos .demandprogress {
-  position: relative;
-  top: 8px;
-  margin-right: 40px;
-}
-
-.bftn-homepage footer .press-inquiries {
-  width: 65%;
-  float: left;
-  padding-top: 10px;
-  font-weight: bold;
-  color: #717093;
-}
-
-.bftn-homepage footer .press-inquiries a {
-  color: #FFF;
-}
-
-.bftn-homepage footer .press-inquiries .no-em {
-  text-decoration: none;
-}
-
-.bftn-homepage footer .press-inquiries h3 {
-  margin-bottom: 15px;
-}
-
-.bftn-homepage footer .social-media {
-  float: left;
-  height: 90px;
-  width: 30%;
-  margin-left: 5%;
-}
-
-.bftn-homepage footer .social-media a,.bftn-homepage footer .social-media div.faux-a {
-  display: block;
-  width: 100%;
-  font-family: "Open Sans",sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  position: relative;
-  color: #FFF;
-  text-decoration: none;
-  cursor: pointer;
-  height: 50px;
-  padding: 0 45px 0 15px;
-  line-height: 50px;
-  border-radius: 25px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.bftn-homepage footer .social-media a span,.bftn-homepage footer .social-media div.faux-a span {
-  margin-left: 5px;
-}
-
-.bftn-homepage footer .social-media img {
-  position: absolute;
-  height: 40px;
-  top: 5px;
-  right: 15px;
-}
-
-.bftn-homepage footer .social-media .twitter {
-  background-color: #2ecaf8;
-  margin-top: 70px;
-  margin-bottom: 10px;
-}
-
-.bftn-homepage footer .social-media .twitter:hover {
-  background-color: #44bee2;
-}
-
-.bftn-homepage footer .social-media .facebook {
-  background-color: #224769;
-}
-
-.bftn-homepage footer .social-media .facebook:hover {
-  background-color: #30465b;
-}
-
-.bftn-homepage footer .built-by {
-  clear: both;
-  font-weight: bold;
-  text-align: center;
-  width: 300px;
-  margin: 40px auto 0;
-  background-color: #171629;
-  padding: 20px 0 40px;
-  line-height: 1em;
-  color: #717093;
-  border-radius: 3px 3px 0 0;
-}
-
-.bftn-homepage footer .built-by img {
-  position: relative;
-  top: 2px;
-}
-
-.bftn-homepage a.btn {
-  border: none;
-  text-decoration: none;
-  text-align: center;
-  font-family: "Montserrat",sans-serif;
-  font-weight: bold;
-  display: block;
-  width: 50%;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  background-color: #f94220;
-  color: #FFF;
-  cursor: pointer;
-}
-
-.bftn-homepage a.btn:hover {
-  background-color: #e25237;
-}
-
-.bftn-homepage .modal {
-  position: fixed;
-  z-index: 20;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
-
-.bftn-homepage .modal p {
-  width: 100%;
-}
-
-.bftn-homepage .modal .modal-content-container {
-  pointer-events: none;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  top: 50%;
-}
-
-.bftn-homepage .modal .modal-content {
-  pointer-events: all;
-  position: relative;
-  margin: 0 auto;
-}
-
-.bftn-homepage .loading-modal .modal-content {
-  position: relative;
-  height: 60px;
-  width: 60px;
-  margin: -30px auto 0;
-}
-
-.bftn-homepage .twitter-modal .modal-content {
-  max-width: 600px;
-  background-color: #171629;
-  margin: -180px auto 0;
-  padding: 20px;
-}
-
-.bftn-homepage .twitter-modal .modal-content a {
-  color: #FFF;
-}
-
-.bftn-homepage .twitter-modal .modal-content h2 {
-  text-align: center;
-  font-size: 40px;
-  margin: 0 0 10px;
-}
-
-.bftn-homepage .twitter-modal .modal-content .btn span {
-  position: relative;
-  top: -6px;
-}
-
-.bftn-homepage .twitter-modal .modal-content img {
-  display: inline-block;
-  height: 30px;
-}
-
-.bftn-homepage .social-media-buttons {
-  position: absolute;
-  left: 0;
-  top: 500px;
-  z-index: 100;
-}
-
-.bftn-homepage .social-media-buttons .share-bar {
-  display: block;
-  position: relative;
-  height: 60px;
-  width: 80px;
-  border-radius: 0 30px 30px 0;
-  margin-bottom: 10px;
-  transition: width 0.2s ease-in;
-}
-
-.bftn-homepage .social-media-buttons .share-bar span {
-  font-family: "Open Sans",sans-serif;
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  display: block;
-  line-height: 60px;
-  width: 200px;
-  text-align: right;
-  opacity: 0;
-  position: absolute;
-  right: 60px;
-  transition: opacity 0.4s ease-in;
-}
-
-.bftn-homepage .social-media-buttons .share-bar img {
-  position: absolute;
-  height: 50px;
-  right: 15px;
-  top: 5px;
-}
-
-.bftn-homepage .social-media-buttons .share-bar:hover {
-  width: 250px;
-}
-
-.bftn-homepage .social-media-buttons .share-bar:hover span {
-  opacity: 1.0;
-}
-
-.bftn-homepage .social-media-buttons .twitter {
-  background-color: #2ecbf8;
-}
-
-.bftn-homepage .social-media-buttons .facebook {
-  background-color: #234769;
-}
-
-.bftn-homepage .carousel {
-  position: relative;
-}
-
-.bftn-homepage .carousel .carousel-item {
-  position: absolute;
-  transition: left 0.3s ease-in,opacity 0.3s ease-in;
-  opacity: 0.2;
-}
-
-.bftn-homepage .carousel .carousel-item.carousel-item-active {
-  opacity: 1.0;
-}
-
-.bftn-homepage .political-scoreboard {
-  overflow: hidden;
-}
-
-.bftn-homepage .political-scoreboard .state-selector {
-  font-size: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #6b63ff;
-}
-
-.bftn-homepage .political-scoreboard .state-selector select {
-  margin-left: 40px;
-  padding: 5px;
-  text-transform: uppercase;
-}
-
-.bftn-homepage .political-scoreboard .psb-unknown h4 {
-  color: #7067a4;
-}
-
-.bftn-homepage .political-scoreboard .psb-unknown div.cover {
-  background-color: rgba(55,53,82,0.5);
-}
-
-.bftn-homepage .political-scoreboard .psb-unknown .politician:hover div.cover {
-  background-color: rgba(55,53,82,0.9);
-}
-
-.bftn-homepage .political-scoreboard .psb-cable h4 {
-  color: #ff1a09;
-}
-
-.bftn-homepage .political-scoreboard .psb-cable div.cover {
-  background-color: rgba(255,26,9,0.5);
-}
-
-.bftn-homepage .political-scoreboard .psb-cable .politician:hover div.cover {
-  background-color: rgba(255,26,9,0.7);
-}
-
-.bftn-homepage .political-scoreboard .psb-internet h4 {
-  color: #45bcc0;
-}
-
-.bftn-homepage .political-scoreboard .psb-internet div.cover {
-  background-color: rgba(75,205,207,0.5);
-}
-
-.bftn-homepage .political-scoreboard .psb-internet .politician:hover div.cover {
-  background-color: rgba(75,205,207,0.7);
-}
-
-.bftn-homepage .political-scoreboard .politician {
-  width: 100px;
-  height: 122px;
-  position: relative;
-}
-
-.bftn-homepage .political-scoreboard .politician img {
-  width: 100px;
-  height: 122px;
-}
-
-.bftn-homepage .political-scoreboard .politician div.cover {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
-
-.bftn-homepage .political-scoreboard .politician div.cover span {
-  color: #FFF;
-  position: absolute;
-  bottom: 6px;
-  left: 0px;
-  text-align: center;
-  width: 100%;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 0 0 5px black;
-}
-
-.bftn-homepage .political-scoreboard .politician div.cover-long span {
-  font-size: 10px;
-  bottom: 9px;
-}
-
-.bftn-homepage .political-scoreboard .politician div.actions {
-  position: absolute;
-  bottom: 20px;
-  left: 0px;
-  width: 100%;
+[v-cloak] {
   display: none;
 }
 
-.bftn-homepage .political-scoreboard .politician div.actions .btn {
-  font-size: 10px;
-  padding: 7px 5px;
-  width: 90%;
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #02003c;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 16px;
+  line-height: 1.3;
+  background-image: url("../images/background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: #3825ff;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+}
+
+button {
+  background-color: #3825ff;
+  border-radius: 4px;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  padding: 6px 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 600px;
+  max-width: 96%;
+  margin: auto;
+}
+
+em.election {
+  font-style: normal;
+  background-image: url(../images/election-underline.png);
+  background-repeat: no-repeat;
+  background-size: 115%;
+  background-position: -10px bottom;
+}
+
+#pledge-form {
+  background-color: #fff;
+  color: #06032e;
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+#pledge-form p {
+  font-size: 19px;
+  margin-bottom: 25px;
+}
+
+#pledge-form input {
+  color: #000;
+  font-weight: bold;
+  display: block;
+  font-size: 17px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #3825ff;
+  margin-bottom: 5px;
+}
+
+#pledge-form input::placeholder {
+  color: #3825ff;
+  font-weight: normal;
+}
+
+#pledge-form button {
+  display: block;
+  font-size: 26px;
+  width: 100%;
+  padding: 15px;
+}
+
+#pledge-form small {
+  color: #6462a3;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  width: 300px;
   margin: 10px auto 0;
 }
 
-.bftn-homepage .political-scoreboard .politician div.actions .tweet {
-  background-color: #2ecaf8;
+.scoreboard {
+  margin-top: 100px;
+  animation: fade-in .3s;
 }
 
-.bftn-homepage .political-scoreboard .politician div.actions .tweet:hover {
-  background-color: #0691ba;
+.scoreboard .container {
+  width: 900px;
 }
 
-.bftn-homepage .political-scoreboard .politician div.actions .site {
-  background-color: #224769;
-}
-
-.bftn-homepage .political-scoreboard .politician div.actions .site:hover {
-  background-color: #162d42;
-}
-
-.bftn-homepage .political-scoreboard .politician div.actions.no-site {
-  bottom: 45px;
-}
-
-.bftn-homepage .political-scoreboard .politician div.actions.no-site .site {
-  display: none;
-}
-
-.bftn-homepage .political-scoreboard .carousel-item-active:hover div.actions {
-  display: block;
-}
-
-.bftn-homepage .political-scoreboard .carousel-item-active:hover div.cover span {
-  opacity: 0.1;
-}
-
-.bftn-homepage .political-scoreboard .carousel {
+.scoreboard .politician,
+.scoreboard .politician img {
+  width: 100px;
   height: 122px;
 }
 
-.bftn-homepage .political-scoreboard .carousel .bar {
-  display: none;
-}
-
-.bftn-homepage .political-scoreboard .carousel .carousel-item {
-  transition: left 0.1s ease-in,opacity 0.1s ease-in;
-}
-
-@media screen and (max-width: 800px) {
-  .bftn-homepage .unit {
-    width: 90%;
-  }
-
-  .bftn-homepage .unit p {
-    width: auto;
-  }
-
-  .bftn-homepage h1 {
-    font-size: 40px;
-    white-space: normal;
-  }
-
-  .bftn-homepage h1 span {
-    display: none;
-  }
-
-  .bftn-homepage h2 {
-    font-size: 24px;
-  }
-
-  .bftn-homepage .social-media-buttons {
-    display: none;
-  }
-
-  .bftn-homepage footer .logos {
-    width: 100%;
-    border: none;
-    text-align: center;
-    margin: 0;
-    padding: 10px 0 0;
-    float: none;
-  }
-
-  .bftn-homepage footer .logos a {
-    display: block;
-  }
-
-  .bftn-homepage footer .logos .fftf,  .bftn-homepage footer .logos .demandprogress,  .bftn-homepage footer .logos .freepress {
-    margin: 0;
-  }
-
-  .bftn-homepage footer .social-media {
-    width: 100%;
-    margin: 0;
-    border: none;
-    text-align: center;
-    float: none;
-  }
-
-  .bftn-homepage footer .social-media .twitter {
-    margin-top: 20px;
-  }
-
-  .bftn-homepage footer .press-inquiries {
-    width: 100%;
-    float: none;
-  }
-
-  .bftn-homepage footer .built-by {
-    padding-bottom: 80px;
-  }
-}
-
-@media screen and (max-width: 930px) {
-  .bftn-homepage a.btn {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .bftn-homepage a.btn {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .bftn-homepage .twitter-modal .modal-content h2 {
-    font-size: 25px;
-  }
-
-  .bftn-homepage .twitter-modal .modal-content p {
-    font-size: 16px;
-    line-height: 1.4em;
-  }
-
-  .bftn-homepage a.btn {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .bftn-homepage .twitter-modal .modal-content h2 {
-    font-size: 20px;
-  }
-
-  .bftn-homepage .twitter-modal .modal-content p {
-    font-size: 15px;
-    line-height: 1.2em;
-  }
-
-  .bftn-homepage .twitter-modal .modal-content .btn img {
-    height: 18px;
-  }
-
-  .bftn-homepage .twitter-modal .modal-content .btn span {
-    font-size: 12px;
-    top: -2px;
-  }
-
-  .bftn-homepage .twitter-modal .modal-content a.btn {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .bftn-homepage footer .built-by {
-    width: auto;
-  }
-}
-
-.bftn-homepage .spacer {
-  clear: both;
-}
-
-.bftn-homepage div.sp_fb_large a {
-  color: transparent;
-  background-color: transparent;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-}
-
-.bftn-uber-scoreboard .unit h1 {
-  white-space: normal;
-}
-
-.bftn-uber-scoreboard .politicians-inline {
-  margin-bottom: 2em;
-}
-
-.bftn-uber-scoreboard .politicians-inline .politician {
+.scoreboard .politician {
   display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-.bftn-uber-scoreboard .politician div.cover span.cover-name {
-  bottom: 20px;
-}
-
-.bftn-uber-scoreboard .politician div.cover span.cover-org {
-  font-size: 10px;
-}
-
-[v-cloak] {
-  display: none;
+  margin: 20px;
+  position: relative;
 }

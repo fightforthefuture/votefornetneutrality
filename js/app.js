@@ -72,22 +72,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       },
 
-      congressTeamInternet: function() {
-        var self = this;
+      teamInternet: function() {
         return this.politicians.filter(function(p){
           return p.team === 'team-internet';
         });
       },
 
-      congressUnknown: function() {
-        var self = this;
+      undecided: function() {
         return this.politicians.filter(function(p){
-          return p.team === 'team-unknown';
+          return p.team === 'undecided';
         });
       },
 
-      congressCable: function() {
-        var self = this;
+      teamCable: function() {
         return this.politicians.filter(function(p){
           return p.team === 'team-cable';
         });
@@ -124,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
         this.$http.get('https://cache.battleforthenet.com/v2/politicians-parsed.json').then(function(response){
           if (response.ok) {
             self.politicians = response.body;
+            self.isLoaded = true;
           }
         });
       }
