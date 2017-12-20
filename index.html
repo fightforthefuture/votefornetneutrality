@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Join the Battle for Net Neutrality</title>
+
+    <meta name="description" content="The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them...">
+    <meta name="author" content="Fight for the Future">
+
+    <meta itemprop="name" content="Battle for the Net">
+    <meta itemprop="description" content="The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them...">
+    <meta itemprop="image" content="https://www.battleforthenet.com/images/share_images/urgent.png">
+
+    <!-- Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.battleforthenet.com" />
+    <meta property="og:image" content="https://www.battleforthenet.com/images/share_images/urgent.png" />
+    <meta property="og:title" content="Comcast wants to control what you do online. Do you want to let them?" />
+    <meta property="og:description" content="Comment for “no”. Share this for “oh hell no.” Then click through to actually stop it." />
+    <meta property="og:site_name" content="Battle For The Net" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@FightForTheFtr" />
+    <meta name="twitter:title" content="Battle for the Net" />
+    <meta name="twitter:description" content="The FCC is trying to kill the Internet again. This time, it’s even worse. Here’s how to stop them..." />
+    <meta name="twitter:image" content="https://www.battleforthenet.com/images/share_images/urgent.png" />
+    <meta name="twitter:url" content="https://www.battleforthenet.com/" />
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-resource.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+
+  <body class="bftn-homepage bftn-uber-scoreboard">
+    <div class="social-media-buttons">
+      <a href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com" target="_blank" class="share-bar twitter">
+        <span>Share on twitter</span> <img src="images/twitter_white.svg" />
+      </a>
+      <div class="share-bar facebook">
+        <span>Share on facebook</span> <img src="images/facebook_white.svg" />
+        <div class="sp_184601 sp_fb_large" ></div>
+      </div>
+    </div>
+
+    <div class="unit">
+      <a id="scoreboard"></a>
+      <h1>The FCC just voted to gut net neutrality rules. But Congress can stop them. Here's how it happens.</h1>
+
+      <p>To save net neutrality, we need to get every member of Congress to
+      promise to vote to overrule the FCC vote. Use this page to track them,
+      call them and tweet them.</p>
+
+      <p>Soon we'll begin tracking which members of Congress have cosponsored a
+      "Congressional Resolution of Disapproval" to overrule the FCC. Right now, we
+      know which ones have come out against the FCC's plan, and which have supported
+      it. We need to try to move all of them, but here are the priorities.</p>
+
+      <p>Quick jump: <a href="#in-state">Your representatives</a> &middot; <a href="#team-internet">Team Internet</a> &middot; <a href="#team-unknown">Unknown</a> &middot; <a href="#team-cable">Team Cable</a></p>
+      
+    </div>
+
+    <div class="unit">
+      <div id="political-scoreboard" v-cloak>
+        <div id="uber-political-scoreboard">
+          <div class="political-scoreboard uber-political-scoreboard">
+            <div class="politicians-inline politicians-highlight">
+              <h2 id="in-state">Your representatives:</h2>
+              <div class="state-selector">
+                <p>These are your members of Congress. Start here.
+                  <select v-model="selectedState">
+                    <option value="">Select state</option>
+                    <option v-for="state in states">{{ state }}</option>
+                  </select>
+                </p>
+              </div>
+              <div class="psb-unknown">
+                <politician-card v-for="politician in congressInState" :politician="politician"></politician-card>
+              </div>
+            </div>
+
+            <div id="team-internet" class="politicians-inline">
+              <h2>Team Internet</h2>
+              <p>These are the other members of Congress who've come out against
+              the FCC plan. Thank them, and ask them to vote for the CRA</p>
+
+              <div class="psb-internet">
+                <politician-card v-for="politician in congressTeamInternet" :politician="politician"></politician-card>
+              </div>
+            </div>
+
+            <div id="team-unknown" class="politicians-inline">
+              <h2>Unknown</h2>
+              <p>These are all the members of Congress whose stance we don't know
+              yet. Ask them to vote for the CRA!</p>
+
+              <div class="psb-unknown">
+                <politician-card v-for="politician in congressUnknown" :politician="politician"></politician-card>
+              </div>
+            </div>
+
+            <div id="team-cable" class="politicians-inline">
+              <h2>Team Cable</h2>
+              <p>These are the members of Congress who supported the FCC plan. We
+              still might be able to move them</p>
+
+              <div class="psb-cable">
+                <politician-card v-for="politician in congressCable" :politician="politician"></politician-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="unit">
+        <div class="logos">
+          <a class="fftf" href="https://www.fightforthefuture.org/">
+            <img src="images/footer-fftf-logo.png" srcset="images/footer-fftf-logo-x2.png 2x" />
+          </a>
+          <a class="demandprogress" href="https://demandprogress.org/">
+            <img src="images/footer-demandprogress-logo.png" srcset="images/footer-demandprogress-logo-x2.png 2x" />
+          </a>
+          <a class="freepress" href="https://www.freepress.net/">
+            <img src="images/footer-freepress-logo.png" srcset="images/footer-freepress-logo-x2.png 2x" />
+          </a>
+        </div>
+        <div class="spacer"><!--RISE UP--></div>
+        <div>
+          <div class="press-inquiries">
+            <h3>For Press inquiries, please contact us at:</h3>
+            <p>
+              <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a><br />
+              <a class="no-em" href="tel://1-201-533-8838">201-533-8838</a> or <a href="mailto:tkarr@freepress.net">tkarr@freepress.net</a><br />
+              <a class="no-em" href="tel://1-202-681-7582">202-681-7582</a> or <a href="mailto:press@demandprogress.org">press@demandprogress.org</a>
+            </p>
+
+            <p>All other inquiries, contact <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
+          </div>
+          <div class="social-media">
+            <a class="twitter" href="https://twitter.com/intent/tweet?related=fightfortheftr&text=What%0A%0A%20if%0A%0A%20the%0A%0A%20Internet%0A%0A%20was%0A%0A%20so%0A%0A%20slow%0A%0A%20it%0A%0A%20loaded%0A%0A%20one%0A%0A%20word%0A%0A%20at%0A%0A%20a%0A%0A%20time?%0A%0A%20Defend%20%23NetNeutrality%20https://www.battleforthenet.com" target="_blank">
+              <img src="images/twitter_white.svg" />
+              <span>Share on twitter</span>
+            </a>
+            <div class="faux-a facebook">
+              <img src="images/facebook_white.svg" />
+              <span>Share on facebook</span>
+              <div class="sp_184601 sp_fb_large" ></div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"><!--RISE UP--></div>
+        <div class="built-by">
+          <span>Built by:</span> <img src="images/credit-fftf.png" srcset="images/credit-fftf-x2.png 2x" />
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/x-template" id="politician-card-template">
+      <div :class="'politician carousel-item-active politician-' + politician.team">
+        <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
+        <div :class="{ 'cover': true, 'cover-long': isLong(politician.name) }">
+          <span class="cover-name">{{ politician.name }}</span>
+          <span class="cover-org">
+            {{ politician.org }} - {{ politician.stateCode }}
+            <b v-if="politician.partyCode">({{ politician.partyCode.toUpperCase() }})</b>
+          </span>
+        </div>
+        <div class="actions no-site">
+          <a v-if="politician.twitter" class="btn tweet" :href="politician.tweetLink" target="_blank">Tweet</a>
+          <a class="btn call" href="https://www.battleforthenet.com/call">Call</a>
+          <a class="btn site" :href="politician.site" target="_blank">Visit Site</a>
+        </div>
+      </div>
+    </script>
+
+    <!-- Senty Error Reporting -->
+<!--     <script src="https://cdn.ravenjs.com/3.16.0/raven.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      if (typeof Raven !== 'undefined') Raven.config('https://1a4b59d92e894725acb1d5f4ac65df91@sentry.io/165029').install();
+    </script> -->
+
+    <!-- <script src="//c.shpg.org/103/sp.js"></script> -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-44"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'UA-26576645-20');
+    </script>
+
+    <!-- Facebook Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window,document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', '1762844240629117'); 
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" src="https://www.facebook.com/tr?id=1762844240629117&ev=PageView&noscript=1"/>
+    </noscript>
+  </body>
+</html>
