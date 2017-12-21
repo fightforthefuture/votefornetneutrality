@@ -54,14 +54,16 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
 
   var app = new Vue({
-    el: '#political-scoreboard',
+    el: '#app',
 
     data: {
-      message: 'Hello Vue!',
+      phone: null,
       states: STATES,
       selectedState: null,
       politicians: [],
-      isLoaded: false
+      isLoaded: false,
+      isSubmitting: false,
+      formMessage: null
     },
 
     computed: {
@@ -122,6 +124,22 @@ document.addEventListener("DOMContentLoaded", function() {
           if (response.ok) {
             self.politicians = response.body;
             self.isLoaded = true;
+          }
+        });
+      },
+
+      submitForm: function() {
+        var self = this;
+        this.isSubmitting = true;
+        this.$http.post('https://f5grbcdj79.execute-api.us-east-1.amazonaws.com/prod', { phone: this.phone }).then(function(response){
+          self.isSubmitting = false;
+          
+          if (response.ok && response.body.status === 'pending') {
+            self.phone = null;
+            self.formMessage = "Our bot will be in touch :)";
+          }
+          else {
+            self.formMessage = "That didn't work for some reason :(";
           }
         });
       }

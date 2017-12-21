@@ -39,61 +39,65 @@
   </head>
 
   <body>
-    <div class="container">
-      <img src="images/logo.png" srcset="images/logo@2x.png 2x" alt="Vote for Net Neutrality">
-      <h1>2018 is an <em class="election">election</em> year. Want to overturn the FCC net neutrality vote? Scare Congress with this simple pledge:</h1>
+    <div id="app">
+      <div class="container">
+        <img src="images/logo.png" srcset="images/logo@2x.png 2x" alt="Vote for Net Neutrality">
+        <h1>2018 is an <em class="election">election</em> year. Want to overturn the FCC net neutrality vote? Scare Congress with this simple pledge:</h1>
 
-      <form id="pledge-form">
-        <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
-        <input type="tel" placeholder="Phone number" autofocus name="phone">
-        <button>Sign the Pledge</button>
-        <small>OUR BOT WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES AND SUBMIT A MESSAGE</small>
-      </form>
+        <form id="pledge-form" @submit.prevent="submitForm()">
+          <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
+          <p v-if="formMessage"><b>{{ formMessage }}</b></p>
+          <input type="tel" placeholder="Phone number" autofocus required v-model="phone">
+          <button disabled v-if="isSubmitting">Saving...</button>
+          <button v-else>Sign the Pledge</button>
+          <small>OUR BOT WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES AND SUBMIT A MESSAGE</small>
+        </form>
 
-      <p class="or-text">
-        OR TEXT <b>"VOTE"</b> TO <b>384-387</b>.
-        <small><a href="https://www.battleforthenet.com/privacy/">PRIVACY POLICY</a></small>
-      </p>
-    </div>
+        <p class="or-text">
+          OR TEXT <b>"VOTE"</b> TO <b>384-387</b>.
+          <small><a href="https://www.battleforthenet.com/privacy/">PRIVACY POLICY</a></small>
+        </p>
+      </div>
 
-    <div id="political-scoreboard" v-cloak>
-      <div class="scoreboard" v-show="isLoaded">
-        <div class="container">
-          <div id="in-state" class="politicians">
-            <h2>Your representatives:</h2>
-            <div class="state-selector">
-              <p>These are your members of Congress. Start here.</p>
-              <p>
-                <select v-model="selectedState">
-                  <option value="">Select state</option>
-                  <option v-for="state in states">{{ state }}</option>
-                </select>
-              </p>
+      <div id="political-scoreboard" v-cloak>
+        <div class="scoreboard" v-show="isLoaded">
+          <div class="container">
+            <div id="in-state" class="politicians">
+              <h2>Your representatives:</h2>
+              <div class="state-selector">
+                <p>These are your members of Congress. Start here.</p>
+                <p>
+                  <select v-model="selectedState">
+                    <option value="">Select state</option>
+                    <option v-for="state in states">{{ state }}</option>
+                  </select>
+                </p>
+              </div>
+              <div class="psb-unknown">
+                <politician-card v-for="politician in congressInState" :politician="politician"></politician-card>
+              </div>
             </div>
-            <div class="psb-unknown">
-              <politician-card v-for="politician in congressInState" :politician="politician"></politician-card>
+
+            <div id="team-internet" class="politicians">
+              <h2>Team Internet</h2>
+              <p>These are the other members of Congress who've come out against
+              the FCC plan. Thank them, and ask them to vote for the CRA</p>
+              <politician-card v-for="politician in teamInternet" :politician="politician"></politician-card>
             </div>
-          </div>
 
-          <div id="team-internet" class="politicians">
-            <h2>Team Internet</h2>
-            <p>These are the other members of Congress who've come out against
-            the FCC plan. Thank them, and ask them to vote for the CRA</p>
-            <politician-card v-for="politician in teamInternet" :politician="politician"></politician-card>
-          </div>
+            <div id="team-unknown" class="politicians">
+              <h2>Unknown</h2>
+              <p>These are all the members of Congress whose stance we don't know
+              yet. Ask them to vote for the CRA!</p>
+              <politician-card v-for="politician in undecided" :politician="politician"></politician-card>
+            </div>
 
-          <div id="team-unknown" class="politicians">
-            <h2>Unknown</h2>
-            <p>These are all the members of Congress whose stance we don't know
-            yet. Ask them to vote for the CRA!</p>
-            <politician-card v-for="politician in undecided" :politician="politician"></politician-card>
-          </div>
-
-          <div id="team-cable" class="politicians">
-            <h2>Team Cable</h2>
-            <p>These are the members of Congress who supported the FCC plan. We
-            still might be able to move them</p>
-            <politician-card v-for="politician in teamCable" :politician="politician"></politician-card>
+            <div id="team-cable" class="politicians">
+              <h2>Team Cable</h2>
+              <p>These are the members of Congress who supported the FCC plan. We
+              still might be able to move them</p>
+              <politician-card v-for="politician in teamCable" :politician="politician"></politician-card>
+            </div>
           </div>
         </div>
       </div>
