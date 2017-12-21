@@ -69,6 +69,41 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     computed: {
+      // ORDER BY yesOnCRA DESC, name ASC
+      sortedPoliticians: function() {
+        return this.politicians.sort(function(a, b){
+          if (a.yesOnCRA === b.yesOnCRA) {
+            if (a.name < b.name) {
+              return -1;
+            }
+            else if (a.name > b.name) {
+              return 1;
+            }
+            else {
+              return 0;
+            }
+          }
+          else if (a.yesOnCRA) {
+            return -1;
+          }
+          else {
+            return 1;
+          }
+        });
+      },
+
+      senators: function() {
+        return this.sortedPoliticians.filter(function(p){
+          return p.organization === 'Senate';
+        });
+      },
+
+      representatives: function() {
+        return this.sortedPoliticians.filter(function(p){
+          return p.organization === 'House';
+        });
+      },
+
       congressInState: function() {
         var self = this;
         return this.politicians.filter(function(p){
@@ -96,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     created: function() {
-      this.geocodeSelectedState();
+      // this.geocodeSelectedState();
       this.fetchPoliticians();
     },
 

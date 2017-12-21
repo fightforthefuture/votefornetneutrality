@@ -46,7 +46,7 @@
 
         <form id="pledge-form" @submit.prevent="submitForm()">
           <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
-          <p v-if="formMessage"><b>{{ formMessage }}</b></p>
+          <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
           <input type="tel" placeholder="Phone number" autofocus required v-model="phone">
           <button disabled v-if="isSubmitting">Saving...</button>
           <button v-else>Sign the Pledge</button>
@@ -62,7 +62,19 @@
       <div id="political-scoreboard" v-cloak>
         <div class="scoreboard" v-show="isLoaded">
           <div class="container">
-            <div id="in-state" class="politicians">
+            <div id="senate" class="politicians">
+              <h2>Senate</h2>
+              <p>(The green ones are voting for a CRA)</p>
+              <politician-card v-for="politician in senators" :politician="politician"></politician-card>
+            </div>
+
+            <div id="house" class="politicians">
+              <h2>House of Representatives</h2>
+              <p>(The green ones are voting for a CRA)</p>
+              <politician-card v-for="politician in representatives" :politician="politician"></politician-card>
+            </div>
+
+<!--             <div id="in-state" class="politicians">
               <h2>Your representatives:</h2>
               <div class="state-selector">
                 <p>These are your members of Congress. Start here.</p>
@@ -76,9 +88,9 @@
               <div class="psb-unknown">
                 <politician-card v-for="politician in congressInState" :politician="politician"></politician-card>
               </div>
-            </div>
+            </div> -->
 
-            <div id="team-internet" class="politicians">
+<!--             <div id="team-internet" class="politicians">
               <h2>Team Internet</h2>
               <p>These are the other members of Congress who've come out against
               the FCC plan. Thank them, and ask them to vote for the CRA</p>
@@ -97,7 +109,7 @@
               <p>These are the members of Congress who supported the FCC plan. We
               still might be able to move them</p>
               <politician-card v-for="politician in teamCable" :politician="politician"></politician-card>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -148,19 +160,20 @@
     </footer>
 
     <script type="text/x-template" id="politician-card-template">
-      <div :class="'politician politician-' + politician.team">
+      <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
         <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
-        <div :class="{ 'cover': true, 'cover-long': isLong(politician.name) }">
-          <span class="cover-name">{{ politician.name }}</span>
-          <span class="cover-org">
-            {{ politician.org }} - {{ politician.stateCode }}
-            <b v-if="politician.partyCode">({{ politician.partyCode.toUpperCase() }})</b>
-          </span>
+        <div class="cover">
+          <h5>
+            {{ politician.name }}
+            <small>
+              {{ politician.org }} - {{ politician.stateCode }}
+              <b v-if="politician.partyCode">({{ politician.partyCode.toUpperCase() }})</b>
+            </small>
+          </h5>
         </div>
         <div class="actions">
           <a v-if="politician.twitter" class="btn tweet" :href="politician.tweetLink" target="_blank">Tweet</a>
           <a class="btn call" href="https://www.battleforthenet.com/call">Call</a>
-          <a class="btn site" :href="politician.site" target="_blank">Visit Site</a>
         </div>
       </div>
     </script>

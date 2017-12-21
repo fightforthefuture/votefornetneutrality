@@ -123,14 +123,85 @@ em.election {
   width: 900px;
 }
 
-.scoreboard .politician,
-.scoreboard .politician img {
-  width: 100px;
-  height: 122px;
+.politicians {
+  margin-bottom: 100px;
 }
 
-.scoreboard .politician {
+.politician img,
+.politician .cover {
+  width: 100px;
+  height: 122px;
+  border-radius: 4px;
+}
+
+.politician {
   display: inline-block;
-  margin: 20px;
+  margin: 15px;
   position: relative;
+}
+
+.politician .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.politician h5 {
+  position: absolute;
+  bottom: 6px;
+  left: 0px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+  margin: 0;
+  padding: 0;
+}
+
+.politician h5 small {
+  display: block;
+  font-size: 10px;
+}
+
+.politician.long-name h5 {
+  font-size: 10px;
+  bottom: 9px;
+}
+
+.politician.vote-yes .cover {
+  background-color: rgba(75,205,207,0.5);
+}
+
+.politician .btn {
+  font-size: 10px;
+  padding: 7px 5px;
+  margin: 0 0 5px 0;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Montserrat",sans-serif;
+  font-weight: bold;
+  background-color: #f94220;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.politician .btn:hover {
+  background-color: #e25237;
+}
+
+.politician .btn.tweet {
+  background-color: #2ecaf8;
+}
+
+.politician .btn.tweet:hover {
+  background-color: #0691ba;
+}
+
+@media screen and (max-width: 800px) {
+  .politician {
+    margin: 10px;
+  }
 }
