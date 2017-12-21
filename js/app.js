@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
+  var TEXT_FLOW_ID = '11ccf7cd-70ac-4ffc-9fab-3f7e118651b2';
+
   var STATES = [
     "Alaska",
     "Alabama",
@@ -131,7 +133,13 @@ document.addEventListener("DOMContentLoaded", function() {
       submitForm: function() {
         var self = this;
         this.isSubmitting = true;
-        this.$http.post('https://f5grbcdj79.execute-api.us-east-1.amazonaws.com/prod', { phone: this.phone }).then(function(response){
+        this.$http.post(
+          'https://zbqszazfe5.execute-api.us-east-1.amazonaws.com/v1/flow-starts',
+          { 
+            flow: TEXT_FLOW_ID,
+            phone: this.phone
+          }
+        ).then(function(response){
           self.isSubmitting = false;
           
           if (response.ok && response.body.status === 'pending') {
