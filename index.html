@@ -67,7 +67,7 @@
         <div class="scoreboard" v-show="isLoaded">
           <div class="container">
             <div id="senate" class="politicians">
-              <h2>Senate so far...</h2>
+              <h2>We have {{ senateCRACount }} Senators. 51 to win. {{ 51 - senateCRACount }} to go.</h2>
               <p>(The green ones are already voting for a CRA, so you should vote for them.)</p>
               <politician-card v-for="politician in senators" :politician="politician"></politician-card>
             </div>

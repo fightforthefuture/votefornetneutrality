@@ -127,6 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
         return this.politicians.filter(function(p){
           return p.team === 'team-cable';
         });
+      },
+
+      senateCRACount: function () {
+        return this.politicians.filter(function(p){
+          return p.yesOnCRA
+        }).length
       }
     },
 
