@@ -42,7 +42,7 @@
     <div id="app">
       <div class="container">
         <img src="images/logo.png" srcset="images/logo@2x.png 2x" alt="Vote for Net Neutrality">
-        <h1>2018 is an <em class="election">election</em> year. Want to overturn the FCC net neutrality vote? Scare Congress with this simple pledge:</h1>
+        <h1>2018 is an <em class="election">election</em> year. Want to overturn the FCC net neutrality vote? Scare Congress with this simple pledge. <a href="">Here's why it will work.</a></h1>
 
         <form id="pledge-form" @submit.prevent="submitForm()">
           <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
@@ -59,12 +59,13 @@
         </p>
       </div>
 
+
       <div id="political-scoreboard" v-cloak>
         <div class="scoreboard" v-show="isLoaded">
           <div class="container">
             <div id="senate" class="politicians">
-              <h2>Senate</h2>
-              <p>(The green ones are voting for a CRA)</p>
+              <h2>Senate Scorecard</h2>
+              <p>(The green ones are already voting for a CRA.)</p>
               <politician-card v-for="politician in senators" :politician="politician"></politician-card>
             </div>
 

@@ -39,6 +39,10 @@ h1 {
   font-weight: normal;
 }
 
+h1 a {
+  color: inherit;
+}
+
 button {
   background-color: #3825ff;
   border-radius: 4px;
