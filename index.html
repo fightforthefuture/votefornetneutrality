@@ -62,12 +62,28 @@
         </p>
       </div>
 
+<section class="container">
+  <h2>Why this is a powerful way to save net neutrality:</h2>
+    <ul>
+      <li>The <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA) allows our elected officials in Congress to overrule decisions made by unelected Federal agencies like the FCC.</li>
+      <li>Unlike a normal bill, a "Resolution of Disapproval" under the CRA only requires a simple majority in the Senate and House. No filibuster.</li>
+      <li>More importantly, House and Senate leaders cannot block a CRA with majority support from coming to the floor.</li>
+      <li>Net neutrality is <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">not a partisan issue</a>, but many Republicans in Congress have been on the wrong side of it recently. <a href="https://www.theverge.com/2017/12/13/16772792/coffman-ajit-pai-net-neutrality-letter">That's changing.</a></li>
+      <li>In the Senate, we may only need <em>one</em> more Republican to vote for the CRA to get it passed, given that Susan Collins (R-ME) <a href="https://bangordailynews.com/2017/11/24/politics/collins-pingree-king-rip-plan-to-end-net-neutrality/">opposed the FCC plan</a> and <a href="https://twitter.com/jimmphillipsdc/status/944000024274505728">signalled openness</a> to a CRA.</li>
+      <li>In the House, we'll need about 20 Republicans to listen to their constituents and vote for the CRA. That's harder, but several Republican representatives have <a href="https://arstechnica.com/tech-policy/2017/12/even-some-republican-congresspeople-oppose-full-net-neutrality-repeal/">already criticized</a> the FCC's vote, and given that more than <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">75% of Republican voters</a> support net neutrality, it's doable.</li>
+    </ul>
+</section>
+
+<section class="container">
+  <h2>How the Congressional Review Act Works</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</section>
 
       <div id="political-scoreboard" v-cloak>
         <div class="scoreboard" v-show="isLoaded">
           <div class="container">
             <div id="senate" class="politicians">
-              <h2>{{ senateCRACount }} Senators. 51 to win. {{ 51 - senateCRACount }} to go.</h2>
+              <h2>{{ senateCRACount }} Senators now. 51 to win. {{ 51 - senateCRACount }} to go.</h2>
               <p>(The green ones are already voting for a CRA, so you should vote for them.)</p>
               <politician-card v-for="politician in senators" :politician="politician"></politician-card>
             </div>

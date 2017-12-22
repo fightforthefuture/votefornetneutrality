@@ -29,7 +29,7 @@ body {
 }
 
 a {
-  color: #3825ff;
+  color: inherit;
   text-decoration: underline;
 }
 
@@ -40,8 +40,21 @@ h1 {
   padding: 10px 0 10px 0;
 }
 
-h1 a {
-  color: inherit;
+h2 {
+  padding-bottom: 15px;
+}
+
+
+section {
+  padding-top: 70px;
+}
+
+ul {
+  text-align: left;
+}
+
+li {
+  padding: 6px 0 6px 0;
 }
 
 button {
