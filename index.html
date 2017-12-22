@@ -166,8 +166,8 @@
           <h5>
             {{ politician.name }}
             <small>
-              {{ politician.org }} - {{ politician.stateCode }}
-              <b v-if="politician.partyCode">({{ politician.partyCode.toUpperCase() }})</b>
+<!--              {{ politician.org }} -->
+              (<b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
             </small>
           </h5>
         </div>
