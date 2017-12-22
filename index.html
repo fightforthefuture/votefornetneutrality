@@ -50,8 +50,8 @@
         <form id="pledge-form" @submit.prevent="submitForm()">
           <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
           <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
-          <input type="tel" placeholder="Phone number" autofocus required v-model="phone">
-          <button disabled v-if="isSubmitting">Saving...</button>
+          <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
+          <button disabled v-if="isSubmitting">Submitting...</button>
           <button v-else>Sign the Pledge</button>
           <small>OUR BOT WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND ELECTION REMINDERS. MESSAGE &amp; DATA RATES APPLY.</small>
         </form>
@@ -63,7 +63,12 @@
       </div>
 
 <section class="container">
-  <h2>Why this is a powerful way to save net neutrality:</h2>
+  <h2>How the Congressional Review Act Works</h2>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+</section>
+
+<section class="container">
+  <h2>Why it's a powerful way to save net neutrality:</h2>
     <ul>
       <li>The <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA) allows our elected officials in Congress to overrule decisions made by unelected Federal agencies like the FCC.</li>
       <li>Unlike a normal bill, a "Resolution of Disapproval" under the CRA only requires a simple majority in the Senate and House. No filibuster.</li>
@@ -74,13 +79,8 @@
     </ul>
 </section>
 
-<section class="container">
-  <h2>How the Congressional Review Act Works</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-</section>
-
 <section id="screenshot">
-    <h2>This is what millions of voters will see on election day.</h2>
+    <h2>This is what millions of voters can see on election day.</h2>
     <p>(An approximate dramatization.)</p>
     <img src="images/iphone-screenshot.png">
 </section>

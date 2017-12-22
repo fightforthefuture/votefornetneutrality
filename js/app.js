@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
           
           if (response.ok && response.body.status === 'pending') {
             self.phone = null;
-            self.formMessage = "Our bot will be in touch :)";
+            self.formMessage = "Thanks! Our bot will be in touch :)";
           }
           else {
             self.formMessage = "That didn't work for some reason :(";
