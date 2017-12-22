@@ -78,6 +78,15 @@ button:hover {
   margin: auto;
 }
 
+iframe {
+  max-width: 100vw;
+}
+
+section img {
+  width: 560px;
+  max-width: 100vw;
+}
+
 em.election {
   font-style: normal;
   background-image: url(../images/election-underline.png);
