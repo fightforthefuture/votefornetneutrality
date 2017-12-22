@@ -42,7 +42,10 @@
     <div id="app">
       <div class="container">
         <img src="images/logo.png" srcset="images/logo@2x.png 2x" alt="Vote for Net Neutrality">
-        <h1>2018 is an <em class="election">election</em> year. Want to overturn the FCC net neutrality vote? Scare Congress with this simple pledge. <a href="">Here's why it will work.</a></h1>
+        <h1><strong>If they don't vote for net neutrality, vote them out.</strong></h1>
+        <h1>The FCC just ignored the public and killed net neutrality. But <a href="">soon</a> Congress will have a simple up or down <a href="">51%</a> vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. If they don't vote for net neutrality, we won't vote for them. <strong>They'll listen, or pay.</strong></h1>
+
+<!--        <h1>The FCC just ignored the public and killed net neutrality. But soon Congress will have a simple up or down vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. <strong>If they don't vote for net neutrality, we won't vote for them.</strong> That's how we win.</h1> -->
 
         <form id="pledge-form" @submit.prevent="submitForm()">
           <p class="pledge"><b>Dear Congress:</b> Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you. I have given my phone number to Fight for the Future, who will text me your voting record on the eve of your next election.</p>
@@ -64,8 +67,8 @@
         <div class="scoreboard" v-show="isLoaded">
           <div class="container">
             <div id="senate" class="politicians">
-              <h2>Senate Scorecard</h2>
-              <p>(The green ones are already voting for a CRA.)</p>
+              <h2>Senate so far...</h2>
+              <p>(The green ones are already voting for a CRA, so you should vote for them.)</p>
               <politician-card v-for="politician in senators" :politician="politician"></politician-card>
             </div>
 
