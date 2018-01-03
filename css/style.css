@@ -82,6 +82,10 @@ iframe {
   max-width: 100vw;
 }
 
+img {
+  width: 330px;
+}
+
 section img {
   width: 560px;
   max-width: 100vw;
