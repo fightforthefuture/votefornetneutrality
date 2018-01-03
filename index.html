@@ -48,12 +48,12 @@
 <!--        <h1>The FCC just ignored the public and killed net neutrality. But soon Congress will have a simple up or down vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. <strong>If they don't vote for net neutrality, we won't vote for them.</strong> That's how we win.</h1> -->
 
         <form id="pledge-form" @submit.prevent="submitForm()">
-          <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record on the eve of your next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
+          <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
           <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
           <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
           <button disabled v-if="isSubmitting">Submitting...</button>
           <button v-else>Sign the Pledge</button>
-          <small>OUR BOT WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND <a href="#screenshot">ELECTION REMINDERS</a>. MESSAGE &amp; DATA RATES APPLY.</small>
+          <small>OUR BOT WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND <a href="#screenshot">CAMPAIGN UPDATES</a>. MESSAGE &amp; DATA RATES APPLY.</small>
         </form>
 
         <p class="or-text">
