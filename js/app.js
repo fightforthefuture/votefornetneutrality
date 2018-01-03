@@ -142,14 +142,6 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     methods: {
-      tweetURL: function(pol) {
-        const proNNtweet = ', thanks for supporting net neutrality by voting for the CRA!' 
-        const antiNNtweet = ', I just pledged to not vote for you unless you vote for the CRA to overturn the FCC net neutrality vote!'
-        const tweetURLprefix = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.votefornetneutrality.com&text='
-
-        return tweetURLprefix + '.' + pol.twitter + (pol.yesOnCRA ? proNNtweet : antiNNtweet)
-      },
-
       geocodeSelectedState: function() {
         var self = this;
         this.$http.get('https://fftf-geocoder.herokuapp.com').then(function(response){
@@ -213,6 +205,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
       isLong: function(name) {
         return name.indexOf(' ') === -1 && name.length > 11;
+      },
+
+      tweetURL: function(pol) {
+        var proNNtweet = ', thanks for supporting net neutrality by voting for the CRA!';
+        var antiNNtweet = ', I just pledged to not vote for you unless you vote for the CRA to overturn the FCC net neutrality vote!';
+        var tweetURLprefix = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.votefornetneutrality.com&text=';
+
+        return tweetURLprefix + '.' + pol.twitter + (pol.yesOnCRA ? proNNtweet : antiNNtweet);
       }
     }
   });
