@@ -104,6 +104,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       },
 
+      senatorsInState: function() {
+        var self = this;
+        return this.senators.filter(function(p){
+          return p.state === self.selectedState;
+        });
+      },
+
       congressInState: function() {
         var self = this;
         return this.politicians.filter(function(p){
@@ -128,7 +135,8 @@ document.addEventListener("DOMContentLoaded", function() {
           return p.team === 'team-cable';
         });
       },
-
+      
+      // this function needs to change once we add house members because it counts all.
       senateCRACount: function () {
         return this.politicians.filter(function(p){
           return p.yesOnCRA
@@ -137,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     created: function() {
-      // this.geocodeSelectedState();
+      this.geocodeSelectedState();
       this.fetchPoliticians();
     },
 
