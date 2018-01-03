@@ -144,7 +144,7 @@
     <script type="text/x-template" id="politician-card-template">
       <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
         <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
-        <div class="cover">
+        <div class="cover" @click="openTweetURL(politician)">
           <h5>
             {{ politician.name }}
             <small>
@@ -166,15 +166,15 @@
 
     <!-- <script src="//c.shpg.org/103/sp.js"></script> -->
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-45"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26576645-45"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-26576645-45');
-</script>
+      gtag('config', 'UA-26576645-45');
+    </script>
 
 
     <!-- Facebook Pixel -->

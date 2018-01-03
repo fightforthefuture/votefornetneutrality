@@ -177,6 +177,10 @@ em.election {
   left: 0;
 }
 
+.politician .cover:hover {
+  cursor: pointer;
+}
+
 .politician h5 {
   position: absolute;
   bottom: 6px;

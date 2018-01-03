@@ -234,6 +234,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         return 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.votefornetneutrality.com&text=' + encodeURIComponent(tweetText);
+      },
+
+      openTweetURL: function(pol) {
+        var url = this.tweetURL(pol);
+        window.open(url, '_blank');
       }
     }
   });
