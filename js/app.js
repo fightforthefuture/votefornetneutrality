@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
           else if (a.yesOnCRA) {
-            return -1;
+            return 1;
           }
           else {
-            return 1;
+            return -1;
           }
         });
       },
