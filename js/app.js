@@ -205,6 +205,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
       isLong: function(name) {
         return name.indexOf(' ') === -1 && name.length > 11;
+      },
+
+      tweetURL: function(pol) {
+        const proNNtweet = ',%20I%20will%20only%20be%20voting%20for%20folks%20(like%20you)%20who%20are%20voting%20for%20the%20CRA%20to%20save%20%23NetNeutrality.%20Thanks!%0A%0A(Friends%3A%20text%20%E2%80%9CVOTE%E2%80%9D%20to%20384-387%20to%20make%20this%20same%20pledge%20to%20your%20reps.%20VoteForNetNeutrality.com%20will%20text%20you%20how%20they%20voted,%20right%20before%20the%20election.)' 
+        const antiNNtweet = '%20just%20FYI,%20I%20will%20not%20be%20voting%20for%20anyone%20who%20doesn%E2%80%99t%20vote%20for%20the%20CRA%20to%20save%20%23NetNeutrality.%0A%0A(Friends%3A%20text%20%22VOTE%22%20to%20384-387%20to%20make%20this%20same%20pledge%20to%20your%20reps!%20VoteForNetNeutrality.com%20will%20text%20you%20how%20they%20voted,%20right%20before%20the%20election!)'
+        const tweetURLprefix = 'https://twitter.com/intent/tweet?text='
+        return tweetURLprefix + '.@' + pol.twitter + (pol.yesOnCRA ? proNNtweet : antiNNtweet)
       }
     }
   });

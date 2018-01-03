@@ -176,7 +176,7 @@
           </h5>
         </div>
         <div class="actions">
-          <a v-if="politician.twitter" class="btn tweet" :href="politician.tweetLink" target="_blank">Tweet</a>
+          <a v-if="politician.twitter" class="btn tweet" :href="tweetURL(politician)" target="_blank">Tweet</a>
 <!--          <a class="btn call" href="https://www.battleforthenet.com/call">Call</a> -->
         </div>
       </div>
