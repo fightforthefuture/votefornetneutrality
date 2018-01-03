@@ -69,18 +69,26 @@ document.addEventListener("DOMContentLoaded", function() {
     },
 
     computed: {
-      // ORDER BY yesOnCRA DESC, name ASC
+      // ORDER BY yesOnCRA ASC, partyCode ASC, name ASC
       sortedPoliticians: function() {
         return this.politicians.sort(function(a, b){
           if (a.yesOnCRA === b.yesOnCRA) {
-            if (a.name < b.name) {
+            if (a.partyCode === b.partyCode) {
+              if (a.name < b.name) {
+                return -1;
+              }
+              else if (a.name > b.name) {
+                return 1;
+              }
+              else {
+                return 0;
+              }
+            }
+            else if (a.partyCode < b.partyCode) {
               return -1;
             }
-            else if (a.name > b.name) {
-              return 1;
-            }
             else {
-              return 0;
+              return 1;
             }
           }
           else if (a.yesOnCRA) {
