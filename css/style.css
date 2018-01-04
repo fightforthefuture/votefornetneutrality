@@ -15,6 +15,10 @@
   display: none;
 }
 
+img, iframe {
+  max-width: 100%;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
@@ -78,17 +82,12 @@ button:hover {
   margin: auto;
 }
 
-iframe {
-  max-width: 100vw;
-}
-
-img {
+.logo {
   width: 330px;
 }
 
-section img {
+#screenshot img {
   width: 560px;
-  max-width: 100vw;
 }
 
 em.election {
@@ -143,6 +142,42 @@ em.election {
   display: block;
   max-width: 500px;
   margin: 10px auto 0;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social button {
+  min-width: 18em;
+  max-width: 100%;
+  margin: 0.5em 0;
+  flex: 1;
+  display: flex;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  margin: 0 1em 1em;
+}
+
+.social button.facebook {
+  background: #3b5999;
+}
+
+.social button.twitter {
+  background: #4099ff;
+}
+
+.social button img {
+  max-width: 50px;
+  display: inline-block;
+  flex: 1;
+}
+
+.social button span {
+  line-height: 50px;
+  flex: 2;
 }
 
 .scoreboard {

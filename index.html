@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="Vote for Net Neutrality" />
     <meta name="twitter:description" content="If Congress doesn't vote for net neutrality, we can make them pay at the polls." />
     <meta name="twitter:image" content="http://votefornetneutrality.com/images/social-with-shortcode.png" />
-    <meta name="twitter:url" content="https://www.battleforthenet.com/" />
+    <meta name="twitter:url" content="https://votefornetneutrality.com" />
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
     <link href="css/normalize.css" rel="stylesheet" type="text/css" />
@@ -41,49 +41,63 @@
   <body>
     <div id="app">
       <div class="container">
-        <img src="images/logo@2x.png" alt="Vote for Net Neutrality" class="logo">
-        <h1><strong>It's 2018. If they don't vote for net neutrality this spring, we can vote them out in November.</strong></h1>
-        <h1>The FCC just ignored the public and killed net neutrality. But in 2018, Congress will have a simple up or down vote on whether to overturn the FCC or betray 83% of American voters, in a <em>close</em> election year. If they don't vote for net neutrality, we won't vote for them. <strong>They'll listen, or lose.</strong></h1>
+        <section>
+          <img src="images/logo@2x.png" alt="Vote for Net Neutrality" class="logo">
+          <h1><strong>It's 2018. If they don't vote for net neutrality this spring, we can vote them out in November.</strong></h1>
+          <h1>The FCC just ignored the public and killed net neutrality. But in 2018, Congress will have a simple up or down vote on whether to overturn the FCC or betray 83% of American voters, in a <em>close</em> election year. If they don't vote for net neutrality, we won't vote for them. <strong>They'll listen, or lose.</strong></h1>
 
-<!--        <h1>The FCC just ignored the public and killed net neutrality. But soon Congress will have a simple up or down vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. <strong>If they don't vote for net neutrality, we won't vote for them.</strong> That's how we win.</h1> -->
+          <!--        <h1>The FCC just ignored the public and killed net neutrality. But soon Congress will have a simple up or down vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. <strong>If they don't vote for net neutrality, we won't vote for them.</strong> That's how we win.</h1> -->
 
-        <form id="pledge-form" @submit.prevent="submitForm()">
-          <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
-          <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
-          <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
-          <button disabled v-if="isSubmitting">Submitting...</button>
-          <button v-else>Sign the Pledge</button>
-          <small><a href="https://fightforthefuture.org/">FIGHT FOR THE FUTURE</a> WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND <a href="#screenshot">CAMPAIGN UPDATES</a>. MESSAGE &amp; DATA RATES APPLY.</small>
-        </form>
+          <form id="pledge-form" @submit.prevent="submitForm()">
+            <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
+            <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
+            <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
+            <button disabled v-if="isSubmitting">Submitting...</button>
+            <button v-else>Sign the Pledge</button>
+            <small><a href="https://fightforthefuture.org/">FIGHT FOR THE FUTURE</a> WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND <a href="#screenshot">CAMPAIGN UPDATES</a>. MESSAGE &amp; DATA RATES APPLY.</small>
+          </form>
 
-        <p class="or-text">
-          OR TEXT <b>"VOTE"</b> TO <b>384-387</b>.
-          <small><a href="https://www.battleforthenet.com/privacy/">PRIVACY POLICY</a></small>
-        </p>
-      </div>
+          <p class="or-text">
+            OR TEXT <b>"VOTE"</b> TO <b>384-387</b>.
+            <small><a href="https://www.battleforthenet.com/privacy/">PRIVACY POLICY</a></small>
+          </p>
+        </section>
 
-<section class="container">
-  <h2>How the Congressional Review Act Works</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-</section>
+        <section class="social">
+          <button class="facebook" @click="shareOnFacebook()">
+            <img src="images/facebook_white.svg" alt="Facebook" />
+            <span>Share on Facebook</span>
+          </button>
+          <button class="twitter" @click="shareOnTwitter()">
+            <img src="images/twitter_white.svg" alt="Twitter" />
+            <span>Share on Twitter</span>
+          </button>
+        </section>
 
-<section class="container">
-  <h2>Why it's a powerful way to save net neutrality:</h2>
-    <ul>
-      <li>The <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA) allows our elected officials in Congress to overrule undemocratic decisions made by unelected federal agencies like the FCC.</li>
-      <li>Unlike a normal bill, a "Resolution of Disapproval" under the CRA only requires a simple majority in the Senate and House. No filibuster.</li>
-      <li>More importantly, House and Senate leaders cannot block a CRA with majority support from coming to the floor.</li>
-      <li>Net neutrality is <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">not a partisan issue</a>, but many Republicans in Congress have been on the wrong side of it recently. <a href="https://www.theverge.com/2017/12/13/16772792/coffman-ajit-pai-net-neutrality-letter">That's changing.</a></li>
-      <li>In the Senate, we may only need <em>one</em> more Republican to vote for the CRA to get it passed, given that Susan Collins (R-ME) <a href="https://bangordailynews.com/2017/11/24/politics/collins-pingree-king-rip-plan-to-end-net-neutrality/">opposed the FCC plan</a> and <a href="https://twitter.com/jimmphillipsdc/status/944000024274505728">signalled openness</a> to a CRA.</li>
-      <li>In the House, we'll need about 20 Republicans to listen to their constituents and vote for the CRA. That's harder, but several Republican representatives have <a href="https://arstechnica.com/tech-policy/2017/12/even-some-republican-congresspeople-oppose-full-net-neutrality-repeal/">already criticized</a> the FCC's vote, and given that more than <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">75% of Republican voters</a> support net neutrality, it's doable.</li>
-    </ul>
-</section>
+        <section>
+          <h2>How the Congressional Review Act Works</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/VABCjxFtRnI?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+        </section>
 
-<section id="screenshot">
-    <h2>This is what millions of voters can see on election day.</h2>
-    <p>(An approximate dramatization.)</p>
-    <img src="images/iphone-screenshot.png">
-</section>
+        <section>
+          <h2>Why it's a powerful way to save net neutrality:</h2>
+          <ul>
+            <li>The <a href="https://en.wikipedia.org/wiki/Congressional_Review_Act">Congressional Review Act</a> (CRA) allows our elected officials in Congress to overrule undemocratic decisions made by unelected federal agencies like the FCC.</li>
+            <li>Unlike a normal bill, a "Resolution of Disapproval" under the CRA only requires a simple majority in the Senate and House. No filibuster.</li>
+            <li>More importantly, House and Senate leaders cannot block a CRA with majority support from coming to the floor.</li>
+            <li>Net neutrality is <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">not a partisan issue</a>, but many Republicans in Congress have been on the wrong side of it recently. <a href="https://www.theverge.com/2017/12/13/16772792/coffman-ajit-pai-net-neutrality-letter">That's changing.</a></li>
+            <li>In the Senate, we may only need <em>one</em> more Republican to vote for the CRA to get it passed, given that Susan Collins (R-ME) <a href="https://bangordailynews.com/2017/11/24/politics/collins-pingree-king-rip-plan-to-end-net-neutrality/">opposed the FCC plan</a> and <a href="https://twitter.com/jimmphillipsdc/status/944000024274505728">signalled openness</a> to a CRA.</li>
+            <li>In the House, we'll need about 20 Republicans to listen to their constituents and vote for the CRA. That's harder, but several Republican representatives have <a href="https://arstechnica.com/tech-policy/2017/12/even-some-republican-congresspeople-oppose-full-net-neutrality-repeal/">already criticized</a> the FCC's vote, and given that more than <a href="http://thehill.com/policy/technology/364528-poll-83-percent-of-voters-support-keeping-fccs-net-neutrality-rules">75% of Republican voters</a> support net neutrality, it's doable.</li>
+          </ul>
+        </section>
+
+        <section id="screenshot">
+          <h2>This is what millions of voters can see on election day.</h2>
+          <p>(An approximate dramatization.)</p>
+          <img src="images/iphone-screenshot.png">
+        </section>
+
+      </div> <!-- /container -->
 
       <div id="political-scoreboard" v-cloak>
         <div class="scoreboard" v-show="isLoaded">
@@ -116,7 +130,8 @@
           </div>
         </div>
       </div>
-    </div>
+
+    </div> <!-- /app -->
 
     <footer class="footer">
       <div class="unit">
