@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       fetchPoliticians: function() {
         var self = this;
-        this.$http.get('https://cache.battleforthenet.com/v2/politicians-parsed.json').then(function(response){
+        this.$http.get('https://data.battleforthenet.com/politicians.json').then(function(response){
           if (response.ok) {
             self.politicians = response.body;
             self.isLoaded = true;
