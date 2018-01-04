@@ -52,8 +52,10 @@
             <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
             <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
             <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
-            <button disabled v-if="isSubmitting">Submitting...</button>
-            <button v-else>Sign the Pledge</button>
+            <button v-bind:disabled="isSubmitting">
+              <span v-if="isSubmitting" v-cloak>Submitting...</span>
+              <span v-else>Sign the Pledge</span>
+            </button>
             <small><a href="https://fightforthefuture.org/">FIGHT FOR THE FUTURE</a> WILL TEXT YOU TO IDENTIFY YOUR REPRESENTATIVES, SUBMIT A MESSAGE &amp; SEND <a href="#screenshot">CAMPAIGN UPDATES</a>. MESSAGE &amp; DATA RATES APPLY.</small>
           </form>
 
