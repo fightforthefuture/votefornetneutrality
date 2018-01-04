@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", function() {
       politicians: [],
       isLoaded: false,
       isSubmitting: false,
-      formMessage: null
+      formMessage: null,
+      modalVisible: false
     },
 
     computed: {
@@ -201,7 +202,8 @@ document.addEventListener("DOMContentLoaded", function() {
           
           if (response.ok && response.body.status === 'pending') {
             self.phone = null;
-            self.formMessage = "Thanks! Our bot will be in touch :)";
+            self.formMessage = null;
+            self.showModal();
           }
           else {
             self.formMessage = "That didn't work for some reason :(";
@@ -245,6 +247,16 @@ document.addEventListener("DOMContentLoaded", function() {
       shareOnTwitter: function() {
         var tweetText = this.getMetaContent('twitter:description') + ' ' + this.getMetaContent('twitter:url');
         this.openPopup('https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText), 'twitter');
+      },
+
+      showModal: function() {
+        this.modalVisible = true;
+        document.querySelector('body').classList.add('modal-open');
+      },
+
+      hideModal: function() {
+        this.modalVisible = false;
+        document.querySelector('body').classList.remove('modal-open');
       }
     }
   });

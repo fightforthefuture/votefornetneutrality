@@ -50,9 +50,9 @@
 
           <form id="pledge-form" @submit.prevent="submitForm()">
             <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
-            <p v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
+            <p class="error" v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
             <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
-            <button v-bind:disabled="isSubmitting">
+            <button :disabled="isSubmitting">
               <span v-if="isSubmitting" v-cloak>Submitting...</span>
               <span v-else>Sign the Pledge</span>
             </button>
@@ -133,30 +133,54 @@
         </div>
       </div>
 
-    </div> <!-- /app -->
+      <footer class="footer">
+        <div class="unit">
+          <div class="logos">
+            <p>Made with love by...</p>
+            <a class="fftf" href="https://www.fightforthefuture.org/">
+              <img src="images/footer-fftf-logo.png" srcset="images/footer-fftf-logo-x2.png 2x" />
+            </a>
+          </div>
+          <div class="spacer"><!--RISE UP--></div>
+          <div>
+            <div class="press-inquiries">
+              <p>... a 501(c)4 nonprofit.</p>
+              <p>For Press inquiries, please contact us at:</p>
+              <p>
+                <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a><br />
+              </p>
 
-    <footer class="footer">
-      <div class="unit">
-        <div class="logos">
-          <p>Made with love by...</p>
-          <a class="fftf" href="https://www.fightforthefuture.org/">
-            <img src="images/footer-fftf-logo.png" srcset="images/footer-fftf-logo-x2.png 2x" />
-          </a>
+              <p>All other inquiries, contact: <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
+            </div>
+          </div>
         </div>
-        <div class="spacer"><!--RISE UP--></div>
-        <div>
-          <div class="press-inquiries">
-            <p>... a 501(c)4 nonprofit.</p>
-            <p>For Press inquiries, please contact us at:</p>
-            <p>
-              <a href="tel://1-978-852-6457">978-852-6457</a> or <a href="mailto:press@fightforthefuture.org">press@fightforthefuture.org</a><br />
-            </p>
+      </footer>
 
-            <p>All other inquiries, contact: <a href="mailto:team@fightforthefuture.org">team@fightforthefuture.org</a></p>
+      <div class="modal-wrapper" v-if="modalVisible" v-cloak>
+        <div class="flex-center">
+          <div class="modal">
+            <button class="close" @click="hideModal()">&times;</button>
+            
+            <h1>
+              Thanks! Our bot will be in touch.<br>
+              <b>Now, can you help spread the word?</b>
+            </h1>
+
+            <div class="social">
+              <button class="facebook" @click="shareOnFacebook()">
+                <img src="images/facebook_white.svg" alt="Facebook" />
+                <span>Share on Facebook</span>
+              </button>
+              <button class="twitter" @click="shareOnTwitter()">
+                <img src="images/twitter_white.svg" alt="Twitter" />
+                <span>Share on Twitter</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+
+    </div> <!-- /app -->
 
     <script type="text/x-template" id="politician-card-template">
       <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
