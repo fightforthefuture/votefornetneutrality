@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function() {
           tweetText = '.@' + pol.twitter + ' just FYI, I will not be voting for anyone who doesn’t vote for the CRA to save #NetNeutrality.\n\n(Friends: text "VOTE" to 384-387 to make this same pledge to your reps! VoteForNetNeutrality.com will text you how they voted, right before the election!)'
         }
 
-        return 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.votefornetneutrality.com&text=' + encodeURIComponent(tweetText);
+        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
       },
 
       openTweetURL: function(pol) {
