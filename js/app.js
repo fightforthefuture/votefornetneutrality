@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
     props: [ 'politician' ],
     methods: {
       imageURL: function(pol, suffix='_x1') {
-        return 'https://www.battleforthenet.com/images/scoreboard/' +  pol.biocode + suffix + '.jpg';
+        return 'https://www.fightforthefuture.org/congress-images/' +  pol.biocode + suffix + '.jpg';
       },
 
       isLong: function(name) {
