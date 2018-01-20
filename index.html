@@ -49,7 +49,7 @@
           <!--        <h1>The FCC just ignored the public and killed net neutrality. But soon Congress will have a simple up or down vote on whether to overturn the FCC, or betray <a href="">83%</a> of American voters, in a <em>close</em> election year. <strong>If they don't vote for net neutrality, we won't vote for them.</strong> That's how we win.</h1> -->
 
           <form id="pledge-form" @submit.prevent="submitForm()">
-            <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
+            <p class="pledge">&ldquo;Dear Congress: I just gave my number to Fight for the Future, who will text me your voting record in the run-up to the next election. <strong>Unless you co-sponsor, sign the discharge petition, and vote for a CRA to overturn the FCC net neutrality vote, I will not vote for you.</strong>&rdquo;</p>
             <p class="error" v-if="formMessage" v-cloak><b>{{ formMessage }}</b></p>
             <input type="tel" placeholder="Enter your phone number" autofocus required v-model="phone">
             <button :disabled="isSubmitting">
