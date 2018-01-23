@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var self = this;
         this.isSubmitting = true;
         this.$http.post(
-          'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts,
+          'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts',
           { 
             flow: TEXT_FLOW_ID,
             phone: this.phone
