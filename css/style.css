@@ -55,11 +55,6 @@ h1 {
   padding: 10px 0 10px 0;
 }
 
-h2 {
-  padding-bottom: 15px;
-}
-
-
 section {
   padding-top: 70px;
 }
@@ -221,6 +216,7 @@ em.election {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: rgba(255,26,9,0.5);
 }
 
 .politician .cover:hover {
@@ -267,17 +263,18 @@ em.election {
   background-color: #f94220;
   color: #fff;
   border-radius: 4px;
+  transition: background-color .2s;
 }
 
 .politician .btn:hover {
   background-color: #e25237;
 }
 
-.politician .btn.tweet {
+.politician.vote-yes .btn.tweet {
   background-color: #2ecaf8;
 }
 
-.politician .btn.tweet:hover {
+.politician.vote-yes .btn.tweet:hover {
   background-color: #0691ba;
 }
 
@@ -316,6 +313,20 @@ body.modal-open {
   background-color: transparent;
   color: #06032e;
 }
+
+
+h3.legend {
+  color: #fff;
+}
+
+h3.legend .red {
+  color: #ff1a09;
+}
+
+h3.legend .green {
+  color: #45bcc0;
+}
+
 
 @media screen and (max-width: 800px) {
   .politician {
