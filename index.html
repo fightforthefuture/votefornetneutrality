@@ -31,11 +31,11 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,700" rel="stylesheet" />
     <link href="css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.css?v=5" rel="stylesheet" type="text/css" />
+    <link href="css/style.css?v=6" rel="stylesheet" type="text/css" />
 
     <script src="js/vue.js"></script>
     <script src="js/vue-resource.js"></script>
-    <script src="js/app.js?v=5"></script>
+    <script src="js/app.js?v=6"></script>
   </head>
 
   <body>
@@ -189,18 +189,18 @@
     </div> <!-- /app -->
 
     <script type="text/x-template" id="politician-card-template">
-      <div :class="{ 'politician': true, 'vote-yes': politician.yesOnCRA, 'long-name': isLong(politician.name) }">
-        <img :src="imageURL(politician)" :srcset="imageURL(politician, '_x2') + ' 2x'">
-        <div class="cover" @click="openTweetURL(politician)">
+      <div :class="{ 'politician': true, 'vote-yes': politician.supports_cra, 'long-name': hasLongName }">
+        <img :src="imageURL('_x1')" :srcset="imageURL('_x2') + ' 2x'">
+        <div class="cover" @click="openTweetURL()">
           <h5>
-            {{ politician.name }}
+            {{ politician.last_name }}
             <small>
-              (<span v-if="politician.organization == 'Senate'">SEN </span><b v-if="politician.partyCode">{{ politician.partyCode.toUpperCase() }} - </b>{{ politician.stateCode }})
+              (<span v-if="politician.organization == 'Senate'">SEN </span><b v-if="politician.party">{{ partyCode }} - </b>{{ politician.state }})
             </small>
           </h5>
         </div>
         <div class="actions">
-          <a v-if="politician.twitter" class="btn tweet" :href="tweetURL(politician)" target="_blank">Tweet</a>
+          <a v-if="politician.twitter" class="btn tweet" :href="tweetURL" target="_blank">Tweet</a>
         </div>
       </div>
     </script>

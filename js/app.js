@@ -73,26 +73,26 @@ document.addEventListener("DOMContentLoaded", function() {
       // ORDER BY yesOnCRA ASC, partyCode ASC, name ASC
       sortedPoliticians: function() {
         return this.politicians.sort(function(a, b){
-          if (a.yesOnCRA === b.yesOnCRA) {
-            if (a.partyCode === b.partyCode) {
-              if (a.name < b.name) {
+          if (a.supports_cra === b.supports_cra) {
+            if (a.party === b.party) {
+              if (a.last_name < b.last_name) {
                 return -1;
               }
-              else if (a.name > b.name) {
+              else if (a.last_name > b.last_name) {
                 return 1;
               }
               else {
                 return 0;
               }
             }
-            else if (a.partyCode < b.partyCode) {
+            else if (a.party < b.party) {
               return -1;
             }
             else {
               return 1;
             }
           }
-          else if (a.yesOnCRA) {
+          else if (a.supports_cra) {
             return 1;
           }
           else {
@@ -147,13 +147,13 @@ document.addEventListener("DOMContentLoaded", function() {
       
       senateCRACount: function () {
         return this.senators.filter(function(p){
-          return p.yesOnCRA
+          return p.supports_cra
         }).length
       },
 
       houseCRACount: function() {
         return this.representatives.filter(function(p){
-          return p.yesOnCRA
+          return p.supports_cra
         }).length
       }
     },
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       fetchPoliticians: function() {
         var self = this;
-        this.$http.get('https://data.battleforthenet.com/politicians.json').then(function(response){
+        this.$http.get('https://data.battleforthenet.com/scoreboard/all.json').then(function(response){
           if (response.ok) {
             self.politicians = response.body;
             self.isLoaded = true;
@@ -268,20 +268,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
   Vue.component('politician-card', {
     template: '#politician-card-template',
+    
     props: [ 'politician' ],
-    methods: {
-      imageURL: function(pol, suffix='_x1') {
-        return 'https://www.fightforthefuture.org/congress-images/' +  pol.biocode + suffix + '.jpg';
+
+    computed: {
+      partyCode: function() {
+        return this.politician.party.substr(0, 1)
       },
 
-      isLong: function(name) {
-        return name.indexOf(' ') === -1 && name.length > 11;
-      },
-
-      tweetURL: function(pol) {
+      tweetURL: function() {
         var tweetText;
+        var pol = this.politician;
 
-        if (pol.yesOnCRA) {
+        if (pol.supports_cra) {
           tweetText = 'I am delighted that @' + pol.twitter + ' will be voting for the CRA to overrule the FCC and save our #NetNeutrality rules. Find out where your representatives stand and ask them to do the same! https://battleforthenet.com';
         }
         else if (pol.organization === 'House') {
@@ -294,9 +293,18 @@ document.addEventListener("DOMContentLoaded", function() {
         return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetText);
       },
 
-      openTweetURL: function(pol) {
-        var url = this.tweetURL(pol);
-        window.open(url, '_blank');
+      hasLongName: function() {
+        return this.politician.last_name.indexOf(' ') === -1 && name.length > 11;
+      }
+    },
+
+    methods: {
+      imageURL: function(suffix) {
+        return 'https://www.fightforthefuture.org/congress-images/' + this.politician.bioguide_id + suffix + '.jpg';
+      },
+
+      openTweetURL: function() {
+        window.open(this.tweetURL, '_blank');
       }
     }
   });
